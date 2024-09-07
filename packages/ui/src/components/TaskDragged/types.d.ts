@@ -1,0 +1,3 @@
+interface TaskDraggedProps {
+	id: number;
+}

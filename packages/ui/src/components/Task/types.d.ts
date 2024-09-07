@@ -1,0 +1,3 @@
+interface TaskProps {
+	id: number;
+}

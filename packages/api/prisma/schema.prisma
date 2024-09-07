@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("API_DATABASE_URL")
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+  username      String         @unique
+  password      String
+  boards        BoardUsers[]
+  TaskAssignees TaskAssignee[]
+}
+
+model Board {
+  id        Int          @id @default(autoincrement())
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+  name      String
+  lists     TaskList[]
+  users     BoardUsers[]
+}
+
+model BoardUsers {
+  userId  Int
+  boardId Int
+  user    User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  board   Board @relation(fields: [boardId], references: [id], onDelete: Cascade)
+
+  @@id([userId, boardId])
+}
+
+model TaskList {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  name      String
+  order     Int      @default(0)
+  board     Board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  boardId   Int
+  tasks     Task[]
+}
+
+model Task {
+  id            Int            @id @default(autoincrement())
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+  name          String
+  order         Int            @default(0)
+  list          TaskList       @relation(fields: [listId], references: [id], onDelete: Cascade)
+  listId        Int
+  labels        Label[]
+  assignedUsers TaskAssignee[]
+}
+
+model Label {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  tasks Task[]
+}
+
+model TaskAssignee {
+  userId Int
+  taskId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  task   Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@id([userId, taskId])
+}
+
+model Documents {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+  data Bytes
+}

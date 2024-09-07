@@ -1,0 +1,4 @@
+const HEADER_HEIGHT = 70;
+const NAVBAR_WIDTH = 340;
+
+export { HEADER_HEIGHT, NAVBAR_WIDTH };

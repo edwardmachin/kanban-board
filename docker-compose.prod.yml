@@ -1,0 +1,82 @@
+x-common-variables: &common-variables
+  NODE_ENV: production
+  POSTGRES_DB: kanban
+  POSTGRES_USER: user
+  POSTGRES_PASSWORD: password
+  API_DATABASE_URL: postgresql://user:password@postgres:5432/kanban
+  API_REDIS_HOST: redis
+  API_REDIS_PORT: 6379
+  API_WS_HTTP_PORT: 3000
+  API_HOCUSPOCUS_PORT: 3001
+  API_JWT_SECRET: supersecret
+  API_JWT_EXPIRY: 12h
+  API_LOG_LEVEL: debug
+  API_LOG_FILE_PATH: /app/logs/api.log
+  API_UI_ENDPOINT: http://localhost:80
+
+x-ui-variables: &ui-variables
+  VITE_API_URL: localhost:3000
+  VITE_API_URL_SECURE: "false"
+  VITE_HOCUSPOCUS_URL: localhost:3001
+  VITE_HOCUSPOCUS_URL_SECURE: "false"
+
+services:
+  postgres:
+    image: postgres:latest
+    expose:
+      - "5432"
+    environment:
+      <<: *common-variables
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-postgres.sql:/docker-entrypoint-initdb.d/init-postgres.sql
+
+  redis:
+    image: redis:latest
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+
+  migrate:
+    build:
+      context: .
+      dockerfile: ./packages/api/Dockerfile
+    command: ["pnpm", "prisma", "migrate", "deploy"]
+    environment:
+      <<: *common-variables
+    depends_on:
+      - postgres
+
+  api:
+    build:
+      context: .
+      dockerfile: ./packages/api/Dockerfile
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    depends_on:
+      - postgres
+      - redis
+      - migrate
+    environment:
+      <<: *common-variables
+    volumes:
+      - api_logs:/app/logs
+
+  ui:
+    build:
+      context: .
+      dockerfile: ./packages/ui/Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      <<: *ui-variables
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  api_logs:
+    driver: local

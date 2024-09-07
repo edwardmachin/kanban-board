@@ -1,0 +1,3 @@
+interface TaskTextEditorProps {
+	taskId: number;
+}

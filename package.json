@@ -1,0 +1,39 @@
+{
+	"name": "kanban-board",
+	"version": "1.0.0",
+	"description": "a kanban board fullstack application",
+	"license": "ISC",
+	"lint-staged": {
+		"**/*.{ts,tsx,js,jsx}": "prettier --write"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"prettier": "prettier **/*.{ts,tsx} --write",
+		"test": "pnpm docker:test && pnpm test:api && pnpm test:ui && pnpm docker:down",
+		"test:api": "pnpm --filter api run -r test",
+		"test:ui": "pnpm --filter ui run -r test",
+		"build": "pnpm run -r build",
+		"build:api": "pnpm --filter api run -r build",
+		"build:ui": "pnpm --filter ui run -r build",
+		"prisma:db:push": "pnpm --filter api run -r prisma:db:push",
+		"prisma:migrate:dev": "pnpm --filter api run -r prisma:migrate:dev",
+		"prisma:migrate:deploy": "pnpm --filter api run -r prisma:migrate:deploy",
+		"prisma:studio": "pnpm --filter api run -r prisma:studio",
+		"prisma:generate": "pnpm --filter api run -r prisma:generate",
+		"docker:dev": "pnpm docker:down && docker compose -f docker-compose.dev.yml up -d && pnpm prisma:generate && pnpm prisma:migrate:dev",
+		"docker:prod": "pnpm docker:down && docker compose -f docker-compose.prod.yml up --build -d",
+		"docker:test": "pnpm docker:down && docker compose -f docker-compose.test.yml up --build -d",
+		"docker:down": "docker compose down",
+		"prod": "pnpm docker:prod",
+		"dev": "pnpm docker:dev && pnpm run -r dev",
+		"dev:api": "pnpm docker:dev && pnpm --filter api run -r dev",
+		"dev:ui": "pnpm docker:dev && pnpm --filter ui run -r dev"
+	},
+	"devDependencies": {
+		"lint-staged": "^15.2.5",
+		"husky": "^9.0.11"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.5"
+	}
+}
