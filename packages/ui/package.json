@@ -29,7 +29,7 @@
 		"@mantine/hooks": "^7.12.1",
 		"@mantine/modals": "^7.12.1",
 		"@mantine/notifications": "^7.12.1",
-		"@mantine/nprogress": "^7.12.1",
+		"@mantine/nprogress": "^7.12.2",
 		"@mantine/spotlight": "^7.12.1",
 		"@mantine/tiptap": "^7.12.1",
 		"@tabler/icons-react": "^3.5.0",
