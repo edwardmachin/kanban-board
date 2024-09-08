@@ -13,8 +13,6 @@ const hocuspocusListen = () => {
 		extensions: [
 			new Database({
 				fetch: async ({ documentName }) => {
-					//TODO: only grab docs they have access too
-					// const {username, id : userID} = context.user;
 					const document = await prisma.documents.findUnique({
 						where: { name: documentName },
 					});
@@ -22,8 +20,6 @@ const hocuspocusListen = () => {
 					return Buffer.from(document.data);
 				},
 				store: async ({ documentName, document }) => {
-					//TODO: only store docs they have access too
-					// const {username, id : userID} = context.user;
 					const encoded = encodeStateAsUpdate(document);
 					const buffer = Buffer.from(encoded);
 					await prisma.documents.upsert({
