@@ -34,16 +34,7 @@ The project is organized into a monorepo with the following structure:
 
 1. Clone the repository
 2. Modify `docker-compose.dev.yml` to use required environment variables.
-3. Modify `.env` files inside `/packages/api` and `/packages/ui` to match and ensure values are correct. Example:
-
-   ```env
-   # /packages/api/.env
-   DATABASE_URL="postgresql://user:password@localhost:5432/kanban_db"
-   REDIS_URL="redis://localhost:6379"
-
-   # /packages/ui/.env
-   REACT_APP_API_URL="http://localhost:3001"
-   ```
+3. Modify `.env` files inside `/packages/api` and `/packages/ui` to match and ensure values are correct.
 
 4. At the root level, run the following commands:
    ```bash
@@ -55,8 +46,9 @@ The project is organized into a monorepo with the following structure:
    ```
    This will install dependencies, start Docker containers, generate Prisma client, run migrations, and start the development servers.
 5. Access the application:
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:3001
+   - Frontend: http://localhost:5173 (assuming another instance of vite isn't bound to that port already)
+   - Backend API: http://localhost:3000
+   - Backend TipTap API: http://localhost:3001
 
 ## Setup Production Environment
 
