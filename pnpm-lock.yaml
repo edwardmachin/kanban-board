@@ -32,10 +32,10 @@ importers:
         version: 5.19.0(prisma@5.19.0)
       '@trpc/client':
         specifier: 11.0.0-rc.490
-        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
+        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.502)
       '@trpc/server':
         specifier: next
-        version: 11.0.0-rc.490
+        version: 11.0.0-rc.502
       bcrypt:
         specifier: ^5.1.1
         version: 5.1.1(encoding@0.1.13)
@@ -240,7 +240,7 @@ importers:
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(y-prosemirror@1.2.9(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-view@1.33.9)(y-protocols@1.0.6(yjs@13.6.18))(yjs@13.6.18))
       '@tiptap/extension-color':
         specifier: ^2.4.0
-        version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/extension-text-style@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6)))
+        version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/extension-text-style@2.7.2(@tiptap/core@2.5.6(@tiptap/pm@2.5.6)))
       '@tiptap/extension-highlight':
         specifier: ^2.4.0
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
@@ -266,8 +266,8 @@ importers:
         specifier: ^2.4.0
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
       '@tiptap/extension-text-style':
-        specifier: ^2.4.0
-        version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
+        specifier: ^2.7.2
+        version: 2.7.2(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
       '@tiptap/extension-underline':
         specifier: ^2.4.0
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
@@ -279,13 +279,13 @@ importers:
         version: 2.5.6(@tiptap/pm@2.5.6)
       '@trpc/client':
         specifier: next
-        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
+        version: 11.0.0-rc.502(@trpc/server@11.0.0-rc.502)
       '@trpc/react-query':
         specifier: next
-        version: 11.0.0-rc.490(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490))(@trpc/server@11.0.0-rc.490)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 11.0.0-rc.502(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.502(@trpc/server@11.0.0-rc.502))(@trpc/server@11.0.0-rc.502)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@trpc/server':
         specifier: next
-        version: 11.0.0-rc.490
+        version: 11.0.0-rc.502
       dayjs:
         specifier: ^1.11.11
         version: 1.11.12
@@ -1595,10 +1595,10 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.5.6
 
-  '@tiptap/extension-text-style@2.5.6':
-    resolution: {integrity: sha512-rztXENp9Usyerl2qaknmbwNRqShAR+vm5syBTy6P+L7/u9j5TpZMYgLku7WGIf0gz6EhVhdc1Dnbfif3qi2l6g==}
+  '@tiptap/extension-text-style@2.7.2':
+    resolution: {integrity: sha512-AvUHV6ULnB0AWpyzw895cUNwRCC5lu4+6Vdn5u81xqMC+J6+8WdYqAmfprqBlcMwpj40Q9K+OAYgXRyisu+zIA==}
     peerDependencies:
-      '@tiptap/core': ^2.5.6
+      '@tiptap/core': ^2.7.0
 
   '@tiptap/extension-text@2.5.6':
     resolution: {integrity: sha512-dJFARnhuxaLrUP/3PhSE7Wfq/OBRKKW73ZMVrIFhGbVxOdmTZxA12d95U0e+5q6mbPSQFNx8ZYhqnStztRAjBw==}
@@ -1629,17 +1629,22 @@ packages:
     peerDependencies:
       '@trpc/server': 11.0.0-rc.490+b6a851870
 
-  '@trpc/react-query@11.0.0-rc.490':
-    resolution: {integrity: sha512-sM1AlLA5JPjsTRZJmXieAcbxHQXx+TGg1WTpyCAlBAue9rXGu9FoydfYxhpVcSrSbzdZ5HRmg/cXnC77/O7nBg==}
+  '@trpc/client@11.0.0-rc.502':
+    resolution: {integrity: sha512-ysFQ3wHnjzLcAqeuwx9/B/YV+2XN/kmfAdTUG+O/SUAdP2wAwo6XbhOxlHw0HWS5pDCsTfJkxDr1nMVkuFM07Q==}
+    peerDependencies:
+      '@trpc/server': 11.0.0-rc.502+2a8c56027
+
+  '@trpc/react-query@11.0.0-rc.502':
+    resolution: {integrity: sha512-aWZZGFTxERXOzI0cb2zYoJQyLrnfJz7sqJVTR4/5UJQ1eCRdu7mFnni6rAlcAHI4r2iA+2xtBQ74JPlaVp5krg==}
     peerDependencies:
       '@tanstack/react-query': ^5.49.2
-      '@trpc/client': 11.0.0-rc.490+b6a851870
-      '@trpc/server': 11.0.0-rc.490+b6a851870
+      '@trpc/client': 11.0.0-rc.502+2a8c56027
+      '@trpc/server': 11.0.0-rc.502+2a8c56027
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
 
-  '@trpc/server@11.0.0-rc.490':
-    resolution: {integrity: sha512-JkKLvA0QIErqslsgU6uFvpv9xtxe78C59zqUdZFmUI0V9pIAJlxmODV4I9hTDcX8P+B30rP3z+q2+bPozN2MaQ==}
+  '@trpc/server@11.0.0-rc.502':
+    resolution: {integrity: sha512-n6B8Q/UqF+hFXyCTXq9AWSn6EkXBbVo/Bs7/QzZxe5KD5CdnBomC7A1y6Qr+i0eiOWwTHJZQ0az+gJetb2fdxw==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -7738,10 +7743,10 @@ snapshots:
       '@tiptap/pm': 2.5.6
       y-prosemirror: 1.2.9(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-view@1.33.9)(y-protocols@1.0.6(yjs@13.6.18))(yjs@13.6.18)
 
-  '@tiptap/extension-color@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/extension-text-style@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6)))':
+  '@tiptap/extension-color@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/extension-text-style@2.7.2(@tiptap/core@2.5.6(@tiptap/pm@2.5.6)))':
     dependencies:
       '@tiptap/core': 2.5.6(@tiptap/pm@2.5.6)
-      '@tiptap/extension-text-style': 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
+      '@tiptap/extension-text-style': 2.7.2(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
 
   '@tiptap/extension-document@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))':
     dependencies:
@@ -7837,7 +7842,7 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.5.6(@tiptap/pm@2.5.6)
 
-  '@tiptap/extension-text-style@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))':
+  '@tiptap/extension-text-style@2.7.2(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))':
     dependencies:
       '@tiptap/core': 2.5.6(@tiptap/pm@2.5.6)
 
@@ -7905,19 +7910,23 @@ snapshots:
     transitivePeerDependencies:
       - '@tiptap/pm'
 
-  '@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490)':
+  '@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.502)':
     dependencies:
-      '@trpc/server': 11.0.0-rc.490
+      '@trpc/server': 11.0.0-rc.502
 
-  '@trpc/react-query@11.0.0-rc.490(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490))(@trpc/server@11.0.0-rc.490)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@trpc/client@11.0.0-rc.502(@trpc/server@11.0.0-rc.502)':
+    dependencies:
+      '@trpc/server': 11.0.0-rc.502
+
+  '@trpc/react-query@11.0.0-rc.502(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.502(@trpc/server@11.0.0-rc.502))(@trpc/server@11.0.0-rc.502)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/react-query': 5.51.23(react@18.3.1)
-      '@trpc/client': 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
-      '@trpc/server': 11.0.0-rc.490
+      '@trpc/client': 11.0.0-rc.502(@trpc/server@11.0.0-rc.502)
+      '@trpc/server': 11.0.0-rc.502
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@trpc/server@11.0.0-rc.490': {}
+  '@trpc/server@11.0.0-rc.502': {}
 
   '@trysound/sax@0.2.0': {}
 
