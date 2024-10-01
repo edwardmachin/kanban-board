@@ -32,10 +32,10 @@ importers:
         version: 5.19.0(prisma@5.19.0)
       '@trpc/client':
         specifier: 11.0.0-rc.490
-        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
+        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.553)
       '@trpc/server':
         specifier: next
-        version: 11.0.0-rc.490
+        version: 11.0.0-rc.553
       bcrypt:
         specifier: ^5.1.1
         version: 5.1.1(encoding@0.1.13)
@@ -254,8 +254,8 @@ importers:
         specifier: ^2.4.0
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
       '@tiptap/extension-superscript':
-        specifier: ^2.4.0
-        version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
+        specifier: ^2.8.0
+        version: 2.8.0(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))
       '@tiptap/extension-task-item':
         specifier: ^2.4.0
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)
@@ -279,13 +279,13 @@ importers:
         version: 2.5.6(@tiptap/pm@2.5.6)
       '@trpc/client':
         specifier: next
-        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
+        version: 11.0.0-rc.553(@trpc/server@11.0.0-rc.553)
       '@trpc/react-query':
         specifier: next
-        version: 11.0.0-rc.490(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490))(@trpc/server@11.0.0-rc.490)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 11.0.0-rc.553(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.553(@trpc/server@11.0.0-rc.553))(@trpc/server@11.0.0-rc.553)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@trpc/server':
         specifier: next
-        version: 11.0.0-rc.490
+        version: 11.0.0-rc.553
       dayjs:
         specifier: ^1.11.11
         version: 1.11.12
@@ -1574,10 +1574,10 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.5.6
 
-  '@tiptap/extension-superscript@2.5.6':
-    resolution: {integrity: sha512-0jA5K3bOYNFzhizFOd2n+bvnNJfq+i34Drj8UpJIJV9jpkVO71fI0DsEIEWYoLPbLzZCEJYYH/W7BcSIAk6FUg==}
+  '@tiptap/extension-superscript@2.8.0':
+    resolution: {integrity: sha512-3rAVyRvzhoM51vaeIAEXmr2PkucIwv7ptgyxg6zx6STxcyzMchafGee0LJL7Kcn9uE/n7Yt7ek6bDqo8jU8CtA==}
     peerDependencies:
-      '@tiptap/core': ^2.5.6
+      '@tiptap/core': ^2.7.0
 
   '@tiptap/extension-task-item@2.5.6':
     resolution: {integrity: sha512-7MYJ4yZDWrV9ns5rAurXVljSq9vYBRjTnoXgNfg3FCXO0nIvJVvj/35eA+1IOuRQOfnM61ChD68dzHI5GKdWCA==}
@@ -1629,17 +1629,22 @@ packages:
     peerDependencies:
       '@trpc/server': 11.0.0-rc.490+b6a851870
 
-  '@trpc/react-query@11.0.0-rc.490':
-    resolution: {integrity: sha512-sM1AlLA5JPjsTRZJmXieAcbxHQXx+TGg1WTpyCAlBAue9rXGu9FoydfYxhpVcSrSbzdZ5HRmg/cXnC77/O7nBg==}
+  '@trpc/client@11.0.0-rc.553':
+    resolution: {integrity: sha512-ICgziilbuAslRgHIVJZ162KaHQRpHXA1C1LPRsNpxPa9aStPF7eThAjn4V3JmDyJsuDLQgAmqLVRImlLPMYR5Q==}
     peerDependencies:
-      '@tanstack/react-query': ^5.49.2
-      '@trpc/client': 11.0.0-rc.490+b6a851870
-      '@trpc/server': 11.0.0-rc.490+b6a851870
+      '@trpc/server': 11.0.0-rc.553+9b629cc67
+
+  '@trpc/react-query@11.0.0-rc.553':
+    resolution: {integrity: sha512-m88HBhpfIDJccJCXycHtkGS82RG2TVPsZUFIWswR8m6ip5eFNmqWASanu7DiiFbY6sufLT1S8ee28towrPUgoA==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.54.1
+      '@trpc/client': 11.0.0-rc.553+9b629cc67
+      '@trpc/server': 11.0.0-rc.553+9b629cc67
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
 
-  '@trpc/server@11.0.0-rc.490':
-    resolution: {integrity: sha512-JkKLvA0QIErqslsgU6uFvpv9xtxe78C59zqUdZFmUI0V9pIAJlxmODV4I9hTDcX8P+B30rP3z+q2+bPozN2MaQ==}
+  '@trpc/server@11.0.0-rc.553':
+    resolution: {integrity: sha512-pYUhxV3QU834jP1ugJk1uhtPwwaY1ymIuupb4DiWOhNCl68syuXPlUdD8IYsYKd3BjLkmnjlsOUMoyd/aoOF/Q==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -7820,7 +7825,7 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.5.6(@tiptap/pm@2.5.6)
 
-  '@tiptap/extension-superscript@2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))':
+  '@tiptap/extension-superscript@2.8.0(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))':
     dependencies:
       '@tiptap/core': 2.5.6(@tiptap/pm@2.5.6)
 
@@ -7905,19 +7910,23 @@ snapshots:
     transitivePeerDependencies:
       - '@tiptap/pm'
 
-  '@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490)':
+  '@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.553)':
     dependencies:
-      '@trpc/server': 11.0.0-rc.490
+      '@trpc/server': 11.0.0-rc.553
 
-  '@trpc/react-query@11.0.0-rc.490(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490))(@trpc/server@11.0.0-rc.490)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@trpc/client@11.0.0-rc.553(@trpc/server@11.0.0-rc.553)':
+    dependencies:
+      '@trpc/server': 11.0.0-rc.553
+
+  '@trpc/react-query@11.0.0-rc.553(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.553(@trpc/server@11.0.0-rc.553))(@trpc/server@11.0.0-rc.553)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/react-query': 5.51.23(react@18.3.1)
-      '@trpc/client': 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
-      '@trpc/server': 11.0.0-rc.490
+      '@trpc/client': 11.0.0-rc.553(@trpc/server@11.0.0-rc.553)
+      '@trpc/server': 11.0.0-rc.553
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@trpc/server@11.0.0-rc.490': {}
+  '@trpc/server@11.0.0-rc.553': {}
 
   '@trysound/sax@0.2.0': {}
 
