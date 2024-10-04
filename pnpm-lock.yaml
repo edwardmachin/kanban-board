@@ -32,10 +32,10 @@ importers:
         version: 5.19.0(prisma@5.19.0)
       '@trpc/client':
         specifier: 11.0.0-rc.490
-        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
+        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.553)
       '@trpc/server':
         specifier: next
-        version: 11.0.0-rc.490
+        version: 11.0.0-rc.553
       bcrypt:
         specifier: ^5.1.1
         version: 5.1.1(encoding@0.1.13)
@@ -215,8 +215,8 @@ importers:
         specifier: ^7.12.1
         version: 7.12.1(@mantine/core@7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.12.1(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mantine/nprogress':
-        specifier: ^7.12.1
-        version: 7.12.1(@mantine/core@7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.12.1(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^7.13.2
+        version: 7.13.2(@mantine/core@7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.12.1(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mantine/spotlight':
         specifier: ^7.12.1
         version: 7.12.1(@mantine/core@7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.12.1(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -279,13 +279,13 @@ importers:
         version: 2.5.6(@tiptap/pm@2.5.6)
       '@trpc/client':
         specifier: next
-        version: 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
+        version: 11.0.0-rc.553(@trpc/server@11.0.0-rc.553)
       '@trpc/react-query':
         specifier: next
-        version: 11.0.0-rc.490(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490))(@trpc/server@11.0.0-rc.490)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 11.0.0-rc.553(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.553(@trpc/server@11.0.0-rc.553))(@trpc/server@11.0.0-rc.553)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@trpc/server':
         specifier: next
-        version: 11.0.0-rc.490
+        version: 11.0.0-rc.553
       dayjs:
         specifier: ^1.11.11
         version: 1.11.12
@@ -1133,11 +1133,11 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@mantine/nprogress@7.12.1':
-    resolution: {integrity: sha512-cd4B3+ZNvSu7V+xLLQhDIzQMLw0KYKX/l2Ntz17ho8MyROaOrcEQgLclIiXjiFCiPdWkn1xOIwVRV+831hwBjA==}
+  '@mantine/nprogress@7.13.2':
+    resolution: {integrity: sha512-GiseMDc1K42vZa2nHS19rvvtOZX+o2vmwhVhOFRZJ8NxIaR/pk2DcRjeq2cbRFgz9/KtUZNoehOwDqHY+ZYw/A==}
     peerDependencies:
-      '@mantine/core': 7.12.1
-      '@mantine/hooks': 7.12.1
+      '@mantine/core': 7.13.2
+      '@mantine/hooks': 7.13.2
       react: ^18.2.0
       react-dom: ^18.2.0
 
@@ -1151,6 +1151,11 @@ packages:
 
   '@mantine/store@7.12.1':
     resolution: {integrity: sha512-zIzYEheEyXchPTNKsm88BJ0CTEZV6ZNwMhMDWHKQE3CzjKLJdKHJdIBcZImRU3Pn4GROZdZdIkQF9HLJ6BjvYw==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@mantine/store@7.13.2':
+    resolution: {integrity: sha512-JcBGOqRynYiRWzw1rYdmViB/lfeYSec2EXVdSt4eJv+RPICsjjuqrIc3sNzfqJEGxcN4hGSlaeBriSh05K+vNQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -1629,17 +1634,22 @@ packages:
     peerDependencies:
       '@trpc/server': 11.0.0-rc.490+b6a851870
 
-  '@trpc/react-query@11.0.0-rc.490':
-    resolution: {integrity: sha512-sM1AlLA5JPjsTRZJmXieAcbxHQXx+TGg1WTpyCAlBAue9rXGu9FoydfYxhpVcSrSbzdZ5HRmg/cXnC77/O7nBg==}
+  '@trpc/client@11.0.0-rc.553':
+    resolution: {integrity: sha512-ICgziilbuAslRgHIVJZ162KaHQRpHXA1C1LPRsNpxPa9aStPF7eThAjn4V3JmDyJsuDLQgAmqLVRImlLPMYR5Q==}
     peerDependencies:
-      '@tanstack/react-query': ^5.49.2
-      '@trpc/client': 11.0.0-rc.490+b6a851870
-      '@trpc/server': 11.0.0-rc.490+b6a851870
+      '@trpc/server': 11.0.0-rc.553+9b629cc67
+
+  '@trpc/react-query@11.0.0-rc.553':
+    resolution: {integrity: sha512-m88HBhpfIDJccJCXycHtkGS82RG2TVPsZUFIWswR8m6ip5eFNmqWASanu7DiiFbY6sufLT1S8ee28towrPUgoA==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.54.1
+      '@trpc/client': 11.0.0-rc.553+9b629cc67
+      '@trpc/server': 11.0.0-rc.553+9b629cc67
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
 
-  '@trpc/server@11.0.0-rc.490':
-    resolution: {integrity: sha512-JkKLvA0QIErqslsgU6uFvpv9xtxe78C59zqUdZFmUI0V9pIAJlxmODV4I9hTDcX8P+B30rP3z+q2+bPozN2MaQ==}
+  '@trpc/server@11.0.0-rc.553':
+    resolution: {integrity: sha512-pYUhxV3QU834jP1ugJk1uhtPwwaY1ymIuupb4DiWOhNCl68syuXPlUdD8IYsYKd3BjLkmnjlsOUMoyd/aoOF/Q==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -7422,11 +7432,11 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  '@mantine/nprogress@7.12.1(@mantine/core@7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.12.1(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@mantine/nprogress@7.13.2(@mantine/core@7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.12.1(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@mantine/core': 7.12.1(@mantine/hooks@7.12.1(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mantine/hooks': 7.12.1(react@18.3.1)
-      '@mantine/store': 7.12.1(react@18.3.1)
+      '@mantine/store': 7.13.2(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -7439,6 +7449,10 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@mantine/store@7.12.1(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
+  '@mantine/store@7.13.2(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
@@ -7905,19 +7919,23 @@ snapshots:
     transitivePeerDependencies:
       - '@tiptap/pm'
 
-  '@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490)':
+  '@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.553)':
     dependencies:
-      '@trpc/server': 11.0.0-rc.490
+      '@trpc/server': 11.0.0-rc.553
 
-  '@trpc/react-query@11.0.0-rc.490(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.490(@trpc/server@11.0.0-rc.490))(@trpc/server@11.0.0-rc.490)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@trpc/client@11.0.0-rc.553(@trpc/server@11.0.0-rc.553)':
+    dependencies:
+      '@trpc/server': 11.0.0-rc.553
+
+  '@trpc/react-query@11.0.0-rc.553(@tanstack/react-query@5.51.23(react@18.3.1))(@trpc/client@11.0.0-rc.553(@trpc/server@11.0.0-rc.553))(@trpc/server@11.0.0-rc.553)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/react-query': 5.51.23(react@18.3.1)
-      '@trpc/client': 11.0.0-rc.490(@trpc/server@11.0.0-rc.490)
-      '@trpc/server': 11.0.0-rc.490
+      '@trpc/client': 11.0.0-rc.553(@trpc/server@11.0.0-rc.553)
+      '@trpc/server': 11.0.0-rc.553
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@trpc/server@11.0.0-rc.490': {}
+  '@trpc/server@11.0.0-rc.553': {}
 
   '@trysound/sax@0.2.0': {}
 
